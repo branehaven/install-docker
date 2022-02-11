@@ -34,5 +34,12 @@ echo \
 
 # Update repositories and install Docker
 sudo apt update
-
 sudo apt -y install docker-ce docker-ce-cli containerd.io
+
+# Execute the docker command without sudo
+
+# Add your username to the docker group:
+sudo usermod -aG docker ${USER}
+
+# Apply the new group membership (without having to log out and back in):
+su - ${USER}
